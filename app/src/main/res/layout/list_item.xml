@@ -3,7 +3,7 @@
     <data>
         <variable
             name="data"
-            type="com.example.seki.android_custom_linklifytext_sample.ListData"/>
+            type="com.example.seki.androidCustomLinklifytextSample.ListData"/>
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
