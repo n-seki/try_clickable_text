@@ -8,7 +8,7 @@ public class ClickableTextPresenter {
 
     final View mView;
 
-    interface View {
+    public interface View {
         void setPresenter(ClickableTextPresenter presenter);
         void addData(Spannable text);
         void clearInputText();
