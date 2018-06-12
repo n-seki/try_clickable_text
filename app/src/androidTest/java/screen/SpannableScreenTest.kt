@@ -1,6 +1,8 @@
 package screen
 
 import android.support.test.espresso.Espresso.onView
+import android.support.test.espresso.action.ViewActions.click
+import android.support.test.espresso.action.ViewActions.replaceText
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.filters.LargeTest
@@ -42,6 +44,20 @@ class SpannableScreenTest {
         onView(withId(R.id.submit_button))
                 .check(matches(isDisplayed()))
                 .check(matches(withText(R.string.submit_button_label)))
+    }
+
+    @Test fun `Goボタンをクリックするとリストに要素追加されること`() {
+        onView(withId(R.id.clickable_strings))
+                .perform(replaceText("test"))
+
+        onView(withId(R.id.text))
+                .perform(replaceText("test"))
+
+        onView(withId(R.id.submit_button))
+                .perform(click())
+
+        onView(withId(R.id.recycler_list))
+                .check(matches(hasDescendant(withId(R.id.clickable_text))))
     }
 
 }
